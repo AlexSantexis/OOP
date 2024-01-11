@@ -11,6 +11,11 @@ public class UserDetails extends AbstractEntity {
         this.lastName = lastName;
     }
 
+    public UserDetails(UserDetails userDetails) {
+        this.firstName = userDetails.getFirstName();
+        this.lastName = userDetails.getLastName();
+    }
+
     public String getFirstName() {
         return firstName;
     }
