@@ -35,4 +35,21 @@ public class MobileContact extends AbstractEntity {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MobileContact that = (MobileContact) o;
+        if (!getUserDetails().equals(that.getUserDetails())) return false;
+        return getPhoneNumber().equals(that.getPhoneNumber());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getUserDetails().hashCode();
+        result = 31 * result + getPhoneNumber().hashCode();
+        return result;
+    }
 }
+
